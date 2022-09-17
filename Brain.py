@@ -82,6 +82,20 @@ class Brain:
 
         return out
 
+    def buildWithGenetics(self, genetics):
+
+        total = 0
+        for i in range(1, self.layers + 1):
+            if i != self.layers:
+                for b in range(self.width):
+                    self.Layer[i][b].number = genetics[total]
+                    total += 1
+            else:
+                for b in range(self.widthOfOut):
+                    self.Layer[i][b].number = genetics[total]
+                    total += 1
+
+
 
 
 

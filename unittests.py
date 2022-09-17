@@ -10,3 +10,8 @@ print(len(a))
 c = b.getGenetics()
 print(c)
 print(len(c))
+
+c[0] = 123
+b.buildWithGenetics(c)
+print("Done successfully")
+print(b.getGenetics())
