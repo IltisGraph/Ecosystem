@@ -6,3 +6,7 @@ a = b.entscheide([0, 1, 0, 0])
 
 print(a)
 print(len(a))
+
+c = b.getGenetics()
+print(c)
+print(len(c))

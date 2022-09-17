@@ -21,20 +21,20 @@ class Brain:
         # randomly initialise network
         out = []
         for i in range(self.widthOfInput):
-            out.append(Neuron(random.randint(1, 100) / 100))
+            out.append(Neuron(random.randint(0, 100) / 100))
 
         self.Layer.append(out)
 
         for i in range(self.layers):
             out = []
             for b in range(self.width):
-                out.append(Neuron(random.randint(1, 100) / 100))
+                out.append(Neuron(random.randint(0, 100) / 100))
 
             self.Layer.append(out)
 
         out = []
         for i in range(self.widthOfOut):
-            out.append(Neuron(random.randint(1, 100) / 100))
+            out.append(Neuron(random.randint(0, 100) / 100))
 
         self.Layer.append(out)
 
@@ -66,6 +66,22 @@ class Brain:
 
 
         return [self.Layer[-1][b].currentstate for b in range(self.widthOfOut)]
+
+
+    def getGenetics(self):
+
+        out = []
+        for i in range(self.layers + 2):
+            if i != len(self.Layer) - 1 and i != 0:
+                for b in range(self.width):
+                    out.append(self.Layer[i][b].number)
+            if i == len(self.Layer) - 1 and i != 0:
+                for b in range(self.widthOfOut):
+                    out.append(self.Layer[i][b].number)
+
+
+        return out
+
 
 
 
