@@ -43,6 +43,10 @@ class Brain:
     def entscheide(self, input):
 
         assert self.widthOfInput == len(input)
+
+        # there might be an error if this is not true
+        assert self.layers > 1
+
         for i in range(self.widthOfInput):
             self.Layer[0][i].currentstate = input[i]
 
@@ -50,15 +54,15 @@ class Brain:
             for b in range(self.width):
                 if i == 1:
                     for c in range(self.widthOfInput):
-                        self.Layer[i][b].currentstate = self.Layer[0][c].currentstate * self.Layer[i][b].number
+                        self.Layer[i][b].currentstate += self.Layer[0][c].currentstate * self.Layer[i][b].number
                 else:
                     for c in range(self.width):
-                        self.Layer[i][b].currentstate = self.Layer[i-1][c].currentstate * self.Layer[i][b].number
+                        self.Layer[i][b].currentstate += self.Layer[i-1][c].currentstate * self.Layer[i][b].number
 
 
         for i in range(self.widthOfOut):
             for b in range(self.width):
-                self.Layer[-1][i].currentstate = self.Layer[-2][b].currentstate * self.Layer[-1][i].number
+                self.Layer[-1][i].currentstate += self.Layer[-2][b].currentstate * self.Layer[-1][i].number
 
 
         return [self.Layer[-1][b].currentstate for b in range(self.widthOfOut)]
