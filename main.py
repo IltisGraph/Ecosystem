@@ -1,4 +1,8 @@
 import pygame as pg
+from Bakterie import Bakterie
+
+Bakterien = []
+Bakterien.append(Bakterie("edgar", (255, 0, 0), 250, 250))
 
 
 
@@ -14,6 +18,10 @@ while running:
 
 
     Fenster.fill((255, 255, 255))
+
+    for i in Bakterien:
+        i.draw(pg, Fenster)
+        i.actualize()
 
     pg.display.update()
 
