@@ -30,7 +30,7 @@ class Bakterie:
     def useBrainData(self, data):
 
         entschieden = data.index(max(data))
-        # print(data)
+        print(data)
 
         if entschieden == 0 and self.y > 0:
             self.y -= 0.1
