@@ -2,7 +2,8 @@ import pygame as pg
 from Bakterie import Bakterie
 
 Bakterien = []
-Bakterien.append(Bakterie("edgar", (255, 0, 0), 250, 250))
+for i in range(100):
+    Bakterien.append(Bakterie("edgar", (255, 0, 0), 250, 250))
 
 
 
