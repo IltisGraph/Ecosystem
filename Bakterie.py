@@ -1,8 +1,8 @@
 from Brain import Brain
 
 
-# 1. damage, 2. healing or OK, 3.upedge, 4.redge, 5.downedge, 6.ledge
-BRAIN_DATA = 6
+# 1. damage, 2. healing or OK, 3.upedge, 4.redge, 5.downedge, 6.ledge, 7.distance to up, 8.distance to right, 9.distance to down, 10. distance to left
+BRAIN_DATA = 10
 
 
 class Bakterie:
@@ -54,6 +54,10 @@ class Bakterie:
         forBrain[3] = 1 if int(self.x) == 500 - self.width else 0
         forBrain[4] = 1 if int(self.y) == 500 - self.width else 0
         forBrain[5] = 1 if int(self.x) == 0 else 0
+        forBrain[6] = self.y
+        forBrain[7] = 500 - self.x - self.width
+        forBrain[8] = 500 - self.y - self.width
+        forBrain[9] = self.x
 
 
 

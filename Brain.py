@@ -21,20 +21,20 @@ class Brain:
         # randomly initialise network
         out = []
         for i in range(self.widthOfInput):
-            out.append(Neuron(random.randint(0, 10) / 10))
+            out.append(Neuron(random.randint(0, 5000) / 10000))
 
         self.Layer.append(out)
 
         for i in range(self.layers):
             out = []
             for b in range(self.width):
-                out.append(Neuron(random.randint(0, 1000) / 1000))
+                out.append(Neuron(random.randint(0, 5000) / 10000))
 
             self.Layer.append(out)
 
         out = []
         for i in range(self.widthOfOut):
-            out.append(Neuron(random.randint(0, 10) / 10))
+            out.append(Neuron(random.randint(0, 5000) / 10000))
 
         self.Layer.append(out)
 
